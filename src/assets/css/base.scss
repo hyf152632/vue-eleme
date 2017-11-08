@@ -1,0 +1,38 @@
+@import './mixin.scss';
+
+html,body {
+  height: 100%;
+  line-height: 1;
+  font-weight: 200;
+  font-family: 'PingFang SC','STHeitiSC-Light','Helvetica-Light',arial,sans-serif;
+}
+
+/* 设置1像素 */
+@media screen
+and (-webkit-min-device-pixel-ratio: 1.5)
+and (min-device-pixel-ratio: 1.5){
+  .border-1px::afer {
+    transform: scaleY(0.7);
+  }
+}
+
+@media screen
+and (-webkit-min-device-pixel-ratio: 2)
+and (min-device-pixel-ratio: 2){
+  .border-1px::afer {
+    transform: scaleY(0.5);
+  }
+}
+
+.clearfix {
+  display: inline-block;
+  &:after {
+    display: block;
+    content: '.';
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+    overflow: hidden;
+  }
+}
